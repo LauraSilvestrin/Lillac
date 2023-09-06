@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    
+    background: #f0faff;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 470px;
+
+    background-color: #4070f4;
+    padding: 20px 30px 120px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    overflow: hidden;
+
+    position: relative;
+}
+
+.wrapper form {
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+ 
+.form header {
+    text-align: center;
+
+    font-size: 30px;
+    font-weight: 600;
+    color: #FFF;
+
+    cursor: default;
+}
+
+form input {
+    height: 60px;
+
+    background: #FFF;
+    padding: 0 15px;
+
+    border: none;
+    border-radius: 8px;
+    outline: none;
+
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+form .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+
+    accent-color: #FFF;
+
+    cursor: pointer;
+}
+
+form .checkbox label {
+    color: #FFF;
+    cursor: pointer;
+}
+
+form a {
+    color: #333;
+    text-decoration: none;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+form input[type="submit"] {
+    margin-top: 15px;
+    
+    padding: none;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.form.login {
+    width: calc(100% + 220px);
+    height: 100%;
+
+    background: #FFF;
+    padding: 20px 140px;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 50%;
+    bottom: -85%;
+    transform: translateX(-50%);
+
+    transition: all .6s ease;
+}
+
+.form.login input[type="submit"] {
+    background: #4070f4;
+    border: none;
+
+    color: #FFF;
+}
+
+.form.login input {
+    border: 1px solid #aaa;
+}
+
+.form.login input:focus {
+    box-shadow: 0 1px 0 #ddd;
+}
+
+.form.login header {
+    color: #333;
+    opacity: .6;
+    cursor: pointer;
+}
+
+.wrapper.active .form.login {
+    border-radius: 35%;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, .1);
+    bottom: -15%;
+}
+
+.wrapper.active .form.login header {
+    opacity: 1;
+    cursor: default;
+}
+
+.wrapper.active .form.signup header {
+    opacity: .6;
+    cursor: pointer;
+}

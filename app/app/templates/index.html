@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- METAS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAVICON -->
+
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- SWIPER CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- CSS -->
+    <link href="../static/css/homePage/settings.css" rel="stylesheet">
+    <link href="../static/css/homePage/function.css" rel="stylesheet">
+    <link href="../static/css/homePage/header.css" rel="stylesheet">
+    <link href="../static/css/homePage/home.css" rel="stylesheet">
+    <link href="../static/css/homePage/button.css" rel="stylesheet">
+    <link href="../static/css/homePage/itens.css" rel="stylesheet">
+    <link href="../static/css/homePage/swiper.css" rel="stylesheet">
+    <link href="../static/css/homePage/value.css" rel="stylesheet">
+    <link href="../static/css/homePage/contact.css" rel="stylesheet">
+    <link href="../static/css/homePage/subscribe.css" rel="stylesheet">
+    <link href="../static/css/homePage/footer.css" rel="stylesheet">
+    <link href="../static/css/homePage/scrollup.css" rel="stylesheet">
+    <link href="../static/css/homePage/breakpoints.css" rel="stylesheet">
+    <link href="../static/css/homePage/scrollbar.css" rel="stylesheet">
+
+    <title>Lillac - Ajuda Especializada</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header" style="background-color: transparent;">
+        <nav class="nav container">
+            <a href="/" class="nav__logo">
+                Lillac <i class='bx bx-accessibility' title="Ícone de "></i>
+            </a>
+
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="bx bx-home-alt-2"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#itens" class="nav__link">
+                            <i class="bx bx-building-house"></i>
+                            <span>Itens</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#value" class="nav__link">
+                            <i class="bx bx-award"></i>
+                            <span>Valores</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="bx bx-phone"></i>
+                            <span>Contato</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- THEME CHANGE BUTTON -->
+            <i class='bx bx-moon change-theme' id="theme-button"></i>
+            
+            {% if session["email"] %}
+            <a href="/logout" class="button nav__button">
+                Logout <i class='bx bx-log-out'></i>
+            </a>
+            {% else %}
+            <a href="/cadastro" class="button nav__button">
+                Inscreva-se
+            </a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <main class="main">
+
+        <!-- MAIN -->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Descubra <br> Serviços <br> Especializados
+                    </h1>
+                    <p class="home__description">
+                        Encontre profissionais, empresas e ferramentas especializadas
+                        de acordo as suas necessidades.
+                    </p>
+
+                    <form class="home__search" method="POST" action="/search">
+                        <i class='bx bx-search-alt-2'></i>
+                        <input type="text" placeholder="O que você precisa?" class="home__search-input" name="search"
+                            id="search">
+                        <button class="button" type="submit">Buscar</button>
+                    </form>
+                </div>
+
+                <div class="home__images">
+                    <div class="home__orbe"></div>
+                    <div class="home__img">
+                        <img src="../static/img/home.jpg" alt = "Imagem de 2 mãos segurando um coração de papel">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ITENS -->
+        <section class="itens section" id="itens">
+            <div class="container">
+
+                <span class="section__subtitle">De acordo com as suas</span>
+                <h2 class="section__title">
+                    necessidades<span>!</span>
+                </h2>
+
+                <div class="itens__container swiper">
+                    <div class="swiper-wrapper">
+                        <a class="itens__card swiper-slide" href="/servicos/prestador">
+                            <img src="../static/img/itens-profissionais.svg" class="itens__img" alt="Ilustração em roxo de três pessoas com estetoscópios e pranchetas em mãos">
+
+                            <div class="itens__data">
+                                <h3 class="itens__title">
+                                    Profissionais
+                                </h3>
+                                <h3 class="itens__description">
+                                    Profissionais especializados em pessoas com necessidades especiais.
+                                </h3>
+                            </div>
+                            <a />
+
+                            <a class="itens__card swiper-slide" href="/servicos/tecnologias">
+                                <img src="../static/img/itens-ferramentas.svg" class="itens__img" alt="Ilustração em roxo de 2 cadeirantes praticando esgrima">
+
+                                <div class="itens__data">
+                                    <h3 class="itens__title">
+                                        Tecnologias
+                                    </h3>
+                                    <h3 class="itens__description">
+                                        Tecnologias que fazem possível a acessibilidade em meios digitais.
+                                    </h3>
+                                </div>
+                                <a />
+
+                                <a class="itens__card swiper-slide" href="/servicos/empresas">
+                                    <img src="../static/img/itens-empresas.svg" class="itens__img" alt="Ilustração em roxo de um edifício e 2 personagens entrando no mesmo">
+
+                                    <div class="itens__data">
+                                        <h3 class="itens__title">
+                                            Empresas
+                                        </h3>
+                                        <h3 class="itens__description">
+                                            Empresas que colocam a acessibilidade em primeiro lugar.
+                                        </h3>
+                                    </div>
+                                </a>
+                    </div>
+
+                    <div class="swiper-button-next">
+                        <i class="bx bx-chevron-right"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="bx bx-chevron-left"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VALUES -->
+        <section class="value section" id="value">
+            <div class="value__container container grid">
+                <div class="value__content">
+                    <div class="value__data">
+                        <span class="section__subtitle">Nossos Valores</span>
+                        <h2 class="section__title">
+                            Valores que garantimos a você<span>.</span>
+                        </h2>
+                        <p class="value__description">
+                            Acreditamos que a acessibilidade deve ser priorizada e respeitada.
+                            Por isso, possuímos valores concretos que seguimos a todo vapor!
+                        </p>
+                    </div>
+
+                    <div class="value__accordion">
+                        <div class="value__accordion-item">
+                            <header class="value__accordion-header">
+                                <i class='bx bxs-bookmark value__accordion-icon'></i>
+                                <h3 class="value__accordion-title">
+                                    Acessibilidade para todos
+                                </h3>
+                                <div class="value__accordion-arrow">
+                                    <i class="bx bxs-down-arrow"></i>
+                                </div>
+                            </header>
+
+                            <div class="value__accordion-content">
+                                <p class="value__accordion-description">
+                                    Seguimos as <i>Web Content Accessibility Guidelines</i>
+                                    desenvolvidas pela W3C para garantirmos que estamos transformando a web
+                                    em um lugar cada vez mais acessível para pessoas com deficiência!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="value__accordion-item">
+                            <header class="value__accordion-header">
+                                <i class='bx bx-coin value__accordion-icon'></i>
+                                <h3 class="value__accordion-title">
+                                    Ajudar não tem preço
+                                </h3>
+                                <div class="value__accordion-arrow">
+                                    <i class="bx bxs-down-arrow"></i>
+                                </div>
+                            </header>
+
+                            <div class="value__accordion-content">
+                                <p class="value__accordion-description">
+                                    A plataforma Lillac é distribuida de maneira totalmente gratuita.
+                                    Para nós, não faz sentido cobrar por algo que pertence a todos.
+                                    Nosso único objetivo é facilitar a busca por serviços especializados.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="value__accordion-item">
+                            <header class="value__accordion-header">
+                                <i class='bx bx-bar-chart-alt-2 value__accordion-icon'></i>
+                                <h3 class="value__accordion-title">
+                                    Sobre a visibilidade
+                                </h3>
+                                <div class="value__accordion-arrow">
+                                    <i class="bx bxs-down-arrow"></i>
+                                </div>
+                            </header>
+
+                            <div class="value__accordion-content">
+                                <p class="value__accordion-description">
+                                    Sabemos o quão importante é ter um lugar para divulgar seu trabalho.
+                                    Sendo assim, não existem cobranças para quem deseja utilizar a plataforma
+                                    para divulgação do própio trabalho.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="value__accordion-item">
+                            <header class="value__accordion-header">
+                                <i class='bx bx-message-rounded-dots value__accordion-icon'></i>
+                                <h3 class="value__accordion-title">
+                                    Comunicação é fundamental
+                                </h3>
+                                <div class="value__accordion-arrow">
+                                    <i class="bx bxs-down-arrow"></i>
+                                </div>
+                            </header>
+
+                            <div class="value__accordion-content">
+                                <p class="value__accordion-description">
+                                    Entendemos que a comunicação é essencial. Graças a isso, o site foi
+                                    desenvolvido em cima de uma pesquisa com pessoas da área. Além disso,
+                                    ressaltamos que a plataforma também é fundamentada com pesquisas
+                                    acerca do tema no meio acadêmico.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact section" id="contact">
+
+            <div class="contact__container container grid">
+
+                <div class="contact__content">
+                    <div class="contact__data">
+                        <span class="section__subtitle">Entre em contato</span>
+                        <h2 class="section__title">
+                            É fácil falar conosco<span>!</span>
+                        </h2>
+                        <p class="contact__description">
+                            Está tendo algum problema com a plataforma?
+                            Precisa de ajuda para entender alguma função?
+                            Fale conosco!
+                        </p>
+                    </div>
+
+                    <div class="contact__card">
+                        <div class="contact__card-box">
+                            <div class="contact__card-info">
+                                <i class='bx bx-envelope'></i>
+                                <div>
+                                    <h3 class="contact__card-title">
+                                        Mande um e-mail!
+                                    </h3>
+                                    <p class="contact__description">
+                                        lillac@suporte.com.br
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="button contact__card-button">
+                                Falar agora
+                            </button>
+                        </div>
+
+                        <div class="contact__card-box">
+                            <div class="contact__card-info">
+                                <i class='bx bxl-whatsapp'></i>
+                                <div>
+                                    <h3 class="contact__card-title">
+                                        Chama no zap!
+                                    </h3>
+                                    <p class="contact__description">
+                                        +55 046 99926-1307
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="button contact__card-button">
+                                Falar agora
+                            </button>
+                        </div>
+
+                        <div class="contact__card-box">
+                            <div class="contact__card-info">
+                                <i class='bx bx-code-alt'></i>
+                                <div>
+                                    <h3 class="contact__card-title">
+                                        Veja nosso código!
+                                    </h3>
+                                    <p class="contact__description">
+                                        LauraSilvestrin/lillac
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="button contact__card-button">
+                                Ver agora
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUBSCRIBE -->
+        {% if session["email"] %}
+        <section class="subscribe section">
+            <div class="subscribe__container container">
+                <h1 class="subscribe__title">
+                    Cadastre seu trabalho!
+                </h1>
+                <p class="subscribe__description">
+                    Prestador de serviços ou empresa, cadastre seu trabalho e participar da comunidade!
+                </p>
+                <a href="cadastro" class="button subscribe__button">
+                    cadastrar
+                </a>
+            </div>
+        </section>
+        {% else%}
+        <section class="subscribe section">
+            <div class="subscribe__container container">
+                <h1 class="subscribe__title">
+                    Cadastre seu trabalho!
+                </h1>
+                <p class="subscribe__description">
+                    Prestador de serviços, cadastre-se para para divulgar seu trabalho e participar da comunidade.
+                </p>
+                <a href="cadastro" class="button subscribe__button">
+                    Começar
+                </a>
+            </div>
+        </section>
+        {% endif %}
+    </main>
+
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div>
+                <a href="" class="footer__logo">
+                    Lillac <i class='bx bx-accessibility'></i>
+                </a>
+                <p class="footer__description">
+                    Nosso objetivo é auxiliar pessoas de
+                    acordo com suas necessidades especiais.
+                </p>
+            </div>
+
+            <div class="footer__content">
+                <div>
+                    <h3 class="footer__title">
+                        Sobre a gente
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="" class="footer__link">O Projeto</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer__link">Novidades</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer__link">Os Autores</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">
+                        A Plataforma Lillac
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="" class="footer__link">Como trabalhamos?</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer__link">Segurança de dados</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer__link">Termos de uso</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">
+                        Suporte Técnico
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="" class="footer__link">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer__link">Tutoriais em video</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer__link">Fale conosco</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">
+                        Redes Sociais
+                    </h3>
+
+                    <ul class="footer__social">
+                        <a href="https://facebook.com" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-facebook-circle'></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-twitter'></i>
+                        </a>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer__info container">
+            <span class="footer__copy">
+                &#169; Silvestrin. Todos os direitos reservados.
+            </span>
+        </div>
+    </footer>
+
+    <!-- SCROLL UP -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class='bx bx-chevrons-up'></i>
+    </a>
+
+    <!-- SCROLL REVEAL -->
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- MAIN JS -->
+    <script src="../static/js/headerhome.js"></script>
+    <script src="../static/js/mainHome.js"></script>
+
+</body>
+
+</html>

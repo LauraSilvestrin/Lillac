@@ -1,0 +1,48 @@
+/* DINAMIC CSS */
+
+/* HEADER */
+.scroll-header {
+    background-color: var(--body-color);
+    box-shadow: 0 1px 4px hsla(228, 4%, 15%, .1);
+}
+
+.scroll-header .nav__logo {
+    color: var(--first-color);
+}
+
+/* HEADER THEME */
+.scroll-header .change-theme {
+    color: var(--title-color);
+}
+
+/* ACCORDION  */
+.accordion-open {
+    box-shadow: 0 12px 32px hsla(228, 66%, 45%, .1);
+}
+
+.accordion-open .value__accordion-icon {
+    box-shadow: 0 4px 4px hsla(228, 66%, 45%, .1);
+}
+
+.accordion-open .value__accordion-arrow {
+    box-shadow: 0 2px 4px hsla(228, 66%, 45%, .1);
+}
+
+.accordion-open .value__accordion-arrow i {
+    transform: rotate(180deg);
+}
+
+/* ACTIVE LINK */
+.active-link {
+    background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 53%));
+    box-shadow: 0 4px 8px hsla(228, 66%, 45%, .25);
+}
+
+.active-link i {
+    color: #fff;
+}
+
+/* SCROLL UP */
+.show-scroll {
+    bottom: 8rem !important;
+}

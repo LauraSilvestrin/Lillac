@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Lillac - Ajuda Especializada</title>
+
+    <link rel="stylesheet" href="../static/css/form/style.css">
+
+</head>
+<body>
+
+    <section class="wrapper">
+        <div class="form signup">
+           <header>Inscreva-se</header>
+           <form action="/usuarios/create" method="POST">
+                <input type="text" placeholder="Nome completo" required name="nome">
+                <input type="email" placeholder="Endereço de Email" required name="email">
+                <input type="password" placeholder="Sua senha" required name="senha">
+                <input type="submit" value="Criar conta">
+           </form> 
+        </div>
+
+        <div class="form login">
+            <header>Login</header>
+            <form action="/usuarios/read" method="POST">
+                <input type="email" placeholder="Endereço de Email" required name="email">
+                <input type="password" placeholder="Sua senha" required name="senha">
+                <a href="#">Esqueceu a senha?</a>
+                <input type="submit" value="Entrar">
+            </form> 
+         </div>
+    </section>
+
+    <script src="../static/js/form.js"></script>
+    
+</body>
+</html>
