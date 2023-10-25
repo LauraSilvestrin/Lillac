@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/admPage/breakpoints.css">
+    <link rel="stylesheet" href="../static/css/admPage/footer.css">
+    <link rel="stylesheet" href="../static/css/admPage/header.css">
+    <link rel="stylesheet" href="../static/css/admPage/main.css">
+    <link rel="stylesheet" href="../static/css/admPage/settings.css">
+
+    <title>Lillac - Ajuda Especializada</title>
+</head>
+
+<body>
+
+
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__theme">
+                <i class='bx bx-moon nav__theme-button' id="theme-button"></i>
+            </div>
+        </nav>
+        <section class="header__select">
+            <div class="header-item active" id="0">Pendentes <i class='bx bx-error-alt'> </i></div>
+            <div class="header-item" id="1">Aprovados <i class='bx bx-check'></i></div>
+            <div class="header-item" id="2">Reprovados <i class='bx bx-x'></i></div>
+
+        </section>
+    </header>
+
+    <main class="main">
+        <!-- Pendentes -->
+        <div class="results active-page">
+            {% for dicionario in lista %}
+            {% if dicionario["adm"] == 0 %}
+            <div class="result__item">
+                <form action="/aproveService" method="post">
+                    {%if "cnpj" in dicionario:%}
+                    <a href="/aprovar/empresa/{{dicionario["id"]}}" class="aprove"> Aprovar <i class='bx bx-check'></i></a>
+                    <a href="/reprovar/empresa/{{dicionario["id"]}}" class="reprove"> Reprovar <i class='bx bx-x'></i></a>
+                    {% elif "link" in dicionario %}
+                    <a href="/aprovar/tecnologia/{{dicionario["id"]}}" class="aprove"> Aprovar <i class='bx bx-check'></i></a>
+                    <a href="/reprovar/tecnologia/{{dicionario["id"]}}" class="reprove"> Reprovar <i class='bx bx-x'></i> </a>
+                    {% else%}
+                    <a href="/aprovar/servico/{{dicionario["id"]}}" class="aprove"> Aprovar <i
+                            class='bx bx-check'></i></a>
+                    <a href="/reprovar/servico/{{dicionario[" id"]}}" class="reprove"> Reprovar <i class='bx bx-x'></i>
+                    </a>
+                    {% endif %}
+                    <h1>{{dicionario["titulo"]}}</h1>
+                    <h3>{{dicionario["empresaResponsavel"]}} {{dicionario["email"]}} {{dicionario["cnpj"]}} </h2>
+                        <p>{{dicionario["descricao"]}}</p>
+                        <p>{{dicionario["numero"]}}</p>
+                        {% if 'empresaResponsavel' in dicionario %}
+                        <a href="{{dicionario[" link"]}}">Clique aqui para ir para o download</a>
+                        {% endif %}
+                        {% if 'cnpj' in dicionario %}
+                        <p>{{dicionario["endereco"]}}</p>
+                        {% endif %}
+                </form>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- aprovados -->
+        <div class="results">
+            {% for dicionario in lista %}
+            {% if dicionario["adm"] == 1 %}
+            <div class="result__item">
+                <h1>{{dicionario["titulo"]}}</h1>
+                <h3>{{dicionario["empresaResponsavel"]}} {{dicionario["email"]}} {{dicionario["cnpj"]}} </h2>
+                    <p>{{dicionario["descricao"]}}</p>
+                    <p>{{dicionario["numero"]}}</p>
+                    {% if 'empresaResponsavel' in dicionario %}
+                    <a href="{{dicionario[" link"]}}">Clique aqui para ir para o download</a>
+                    {% endif %}
+                    {% if 'cnpj' in dicionario %}
+                    <p>{{dicionario["endereco"]}}</p>
+                    {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- reprovados -->
+        <div class="results">
+            {% for dicionario in lista %}
+            {% if dicionario["adm"] == 2 %}
+            <div class="result__item">
+                <h1>{{dicionario["titulo"]}}</h1>
+                <h3>{{dicionario["empresaResponsavel"]}} {{dicionario["email"]}} {{dicionario["cnpj"]}} </h2>
+                    <p>{{dicionario["descricao"]}}</p>
+                    <p>{{dicionario["numero"]}}</p>
+                    {% if 'empresaResponsavel' in dicionario %}
+                    <a href="{{dicionario[" link"]}}">Clique aqui para ir para o download</a>
+                    {% endif %}
+                    {% if 'cnpj' in dicionario %}
+                    <p>{{dicionario["endereco"]}}</p>
+                    {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- empresa -->
+        <div class="results">
+            {% for dicionario in lista %}
+            {% if 'cnpj' in dicionario %}
+            <div class="result__item">
+                <h1>{{dicionario["titulo"]}}</h1>
+                <h3>{{dicionario["cnpj"]}}</h2>
+                    <p>{{dicionario["descricao"]}}</p>
+                    <p>{{dicionario["endereco"]}}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+        </div>
+    </main>
+
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div>
+                <a href="" class="footer__logo">
+                    Lillac <i class='bx bx-accessibility'></i>
+                </a>
+                <p class="footer__description">
+                    Nosso objetivo é auxiliar pessoas de
+                    acordo com suas necessidades especiais.
+                </p>
+            </div>
+
+            <div class="footer__content">
+                <div>
+                    <h3 class="footer__title">
+                        Sobre a gente
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="" class="footer__link">O Projeto</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer__link">Novidades</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer__link">Os Autores</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">
+                        A Plataforma Lillac
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="" class="footer__link">Como trabalhamos?</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer__link">Segurança de dados</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer__link">Termos de uso</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">
+                        Suporte Técnico
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="" class="footer__link">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer__link">Tutoriais em video</a>
+                        </li>
+                        <li>
+                            <a href="" class="footer__link">Fale conosco</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">
+                        Redes Sociais
+                    </h3>
+
+                    <ul class="footer__social">
+                        <a href="https://facebook.com" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-facebook-circle'></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-twitter'></i>
+                        </a>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer__info container">
+            <span class="footer__copy">
+                &#169; Silvestrin. Todos os direitos reservados.
+            </span>
+
+            <div class="footer__privacy">
+                <a href="#">Termos de uso</a>
+                <a href="#" #>Política de privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/js/resultPage.js"></script>
+
+</body>
+
+</html>

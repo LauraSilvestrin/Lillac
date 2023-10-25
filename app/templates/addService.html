@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../static/css/addService/addService.css">
+</head>
+<body>
+    <div class="container">
+        <form id="Form1" action="/cadastro/prestador" method="POST">
+            <h3>CADASTRAR SERVIÇO</h3>
+            <input type="text" name="titulo" placeholder="Título" required>
+            <input type="numeric" name="numero" placeholder="Número de telefone">
+            <input type="email" name="email" placeholder="E-mail">
+            <textarea name="descricao" cols="42" rows="3" placeholder="Descrição" required></textarea>
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <form id="Form2" action="/cadastro/ferramenta/" method="POST">
+            <h3>CADASTRAR TECNOLOGIA</h3>
+            <input type="text" name="titulo" placeholder="Título" required>
+            <input type="text" name="link" placeholder="Website" required>
+            <input type="text" name="empresa" placeholder="Empresa responsável">
+            <textarea name="descricao" cols="45" rows="3" placeholder="Descrição" required></textarea>
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <form id="Form3" action="/cadastro/empresa/" method="POST">
+            <h3>CADASTRAR EMPRESA</h3>
+            <input type="text" name="titulo" placeholder="Nome social" required>
+            <input type="text" name="endereco" placeholder="Endereço" required>
+            <input type="text" name="cnpj" placeholder="CNPJ">
+            <textarea name="descricao" cols="42" rows="3" placeholder="Descrição" required></textarea>
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <div class="step-row">
+            <div id="progress"></div>
+            <div class="step-col" id="Step1"><small>Prestador</small></div>
+            <div class="step-col" id="Step2"><small>Tecnologia</small></div>
+            <div class="step-col" id="Step3"><small>Empresa</small></div>
+        </div>
+    </div>
+
+    <script src="../static/js/addService.js"></script>
+</body>
+</html>
