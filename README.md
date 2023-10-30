@@ -32,10 +32,10 @@
 <h3>Artigo</h3>
 <p>Para mais informações, consulte o artigo ou resumo expandido do projeto:</p>
 <a href="https://drive.google.com/drive/my-drive?hl=pt-BR">
-    <h4>Artigo🔗</h4>
+    <h4>Artigo</h4>
 </a>
 <a href="https://latinoware.org/wp-content/uploads/2023/10/236538_2.pdf">
-    <h4>Resumo expandido🔗</h4>
+    <h4>Resumo expandido</h4>
 </a>
 
 <h3>Projeto hospedado</h3>
