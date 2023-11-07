@@ -40,7 +40,7 @@
 
 <h3>Projeto hospedado</h3>
 <a href="https://lillac-production.up.railway.app/">
-    <h4>Você pode acessar o projeto hospedado aqui🔗</h4>
+    <h4>Você pode acessar o projeto hospedado aqui</h4>
 </a>
 
 <h3>Como usar</h3>
@@ -73,7 +73,7 @@ Antes de começar, certifique-se de ter o Python e o pip instalados em seu siste
             Abra um terminal integrado na pasta do projeto e execute o comando: <br>
             <code>py main.py</code><br>
             Vá até o seu navegador e acesse o servidor local com o link: <br>
-            <code>http://127.0.0.1:5000</code>
+            <code>127.0.0.1:5000</code>
         </p>
     </li>
 </ol>

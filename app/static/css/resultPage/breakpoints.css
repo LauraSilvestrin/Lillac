@@ -37,6 +37,11 @@
         padding: .25rem .5rem;
         font-size: var(--smaller-font-size);
     }
+
+    .footer__link{
+        font-size: 14px;
+        width: 145px;
+    }
 }
 
 
@@ -69,6 +74,11 @@
         padding: .25rem .5rem;
         font-size: var(--smaller-font-size);
     }
+
+    .footer__link{
+        font-size: 14px;
+        width: 280px;
+    }
 }
 
 /* Medium devices */
@@ -77,11 +87,19 @@
         grid-template: repeat(3, max-content);
         place-content: center
     }
+    .footer__link{
+        font-size: 14px;
+        width: 300px;
+    }
 }
 
 @media screen and (min-width: 767px) {
     .footer__container {
         justify-content: center;
+    }
+    .footer__link{
+        font-size: 14px;
+        width: 320px;
     }
 }
 
@@ -89,6 +107,10 @@
 @media screen and (min-width: 1023px) {
     .footer__content {
         grid-template-columns: repeat(4, 1fr);
+    }
+    .footer__link{
+        font-size: 14px;
+        width: 300px;
     }
 }
 
@@ -100,5 +122,11 @@
 
     .home__container {
         column-gap: 4rem;
+    }
+
+    .footer__link{
+        font-size: 14px;
+        width: 300px;
+        text-align: justify;
     }
 }

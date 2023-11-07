@@ -153,7 +153,7 @@ def aprovar(tipo, id):
     return redirect("/admpage")
 
 @app.route('/reprovar/<tipo>/<id>')
-def reprovar(tipo,id ):
+def reprovar(tipo, id):
     if tipo == "empresa":
         empresa = Empresa.query.get(id)
         if empresa:

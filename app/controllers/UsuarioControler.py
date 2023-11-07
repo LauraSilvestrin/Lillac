@@ -56,7 +56,6 @@ def read():
         
     except Exception as e:
         print(e)
-        print("o erro ta aqui, buceta")
         return redirect("/cadastro")
 
 @app.route("/editarNome", methods=["POST"])

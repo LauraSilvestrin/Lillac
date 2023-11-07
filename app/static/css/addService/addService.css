@@ -60,6 +60,10 @@ form input {
 form textarea {
     resize: none;
     outline: none;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
 }
 
 ::placeholder {
@@ -127,8 +131,4 @@ form button {
 
 #Step1 {
     color: var(--first-color-lighten);
-}
-
-textarea{
-    border-radius: 4px;
 }

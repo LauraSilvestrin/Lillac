@@ -253,6 +253,10 @@
     .footer__content {
         grid-template-columns: repeat(4, 1fr);
     }
+    .footer__link{
+        font-size: 14px;
+        width: 300px;
+    }
 }
 
 @media screen and (min-width: 1040px) {
@@ -263,5 +267,11 @@
 
     .home__container {
         column-gap: 4rem;
+    }
+
+    .footer__link{
+        font-size: 14px;
+        width: 300px;
+        text-align: justify;
     }
 }
