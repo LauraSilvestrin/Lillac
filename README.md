@@ -26,11 +26,11 @@ O projeto propõe uma aplicação web que facilita a busca e a oferta de serviç
 
 ### Artigo
 Para mais informações, consulte o artigo ou resumo expandido do projeto:
-- [Artigo](https://drive.google.com/drive/my-drive?hl=pt-BR)
-- [Resumo expandido](https://latinoware.org/wp-content/uploads/2023/10/236538_2.pdf)
+- [Artigo](https://drive.google.com/drive/my-drive?hl=pt-BR) 
+- [Resumo expandido](https://latinoware.org/wp-content/uploads/2023/10/236538_2.pdf) 
 
 ### Projeto hospedado
-- Você pode acessar o projeto hospedado aqui
+- [Projeto hospedado](lillac-production.up.railway.app/)
 
 ### Como usar
 Este é um guia passo a passo sobre como configurar e executar este projeto.
@@ -40,12 +40,14 @@ Antes de começar, certifique-se de ter o Python e o pip instalados em seu siste
 
 #### Configuração
 1. **Clone o repositório**
-   Primeiro, clone este repositório para a sua máquina local usando `git clone`.
+   Primeiro, clone este repositório para a sua máquina local usando  
+`git clone`.
 2. **Instale as dependências**
-   Navegue até a pasta do projeto e execute o seguinte comando para instalar todas as dependências necessárias que estão listadas no arquivo "requirements.txt":
+   Navegue até a pasta do projeto e execute o seguinte comando para instalar todas as dependências necessárias que estão listadas no arquivo "requirements.txt":  
 ``pip install -r requirements.txt``
 3. **Crie o banco de dados**
-No MySql execute o arquivo `scripts.sql`
+No MySql execute o arquivo  
+`scripts.sql`
 4. **Execute o Main**
 Abra um terminal integrado na pasta do projeto e execute o comando:  
 ``py main.py``  
